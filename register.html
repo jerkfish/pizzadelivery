@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Forno Express Pizza</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+                <div class="header-container">
+            <div class="logo">Forno Express <span>PIZZA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Menu</a></li>
+                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="store.html">Store Locator</a></li>
+                     
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">Cart (0)</a>
+            </div>        </div>
+    </header>
+    
+    <div class="register-container">
+        <div class="register-box">
+            <h2 class="register-title">CREATE YOUR ACCOUNT</h2>
+            
+            <form id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                    <div class="password-requirements">Password must be at least 8 characters with a mix of letters and numbers</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zipCode">Zip Code</label>
+                    <input type="text" id="zipCode" class="form-control" placeholder="Enter your zip code" required>
+                    <div class="password-requirements">We'll use this to find Forno Express locations near you</div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="promotions" checked>
+                    <label for="promotions">Send me exclusive deals, new product info, and more via email</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="register-button">CREATE ACCOUNT</button>
+            </form>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Sign In</a>
+            </div>
+        </div>
+        
+        <div class="benefits">
+            <h3 class="benefits-title">ACCOUNT BENEFITS</h3>
+            <ul class="benefits-list">
+                <li>Save your favorite orders for quick reordering</li>
+                <li>Store multiple delivery addresses</li>
+                <li>Save payment methods for faster checkout</li>
+                <li>Track your order history and rewards</li>
+                <li>Get exclusive deals and promotions</li>
+                <li>Earn points with every order</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR MENU</h3>
+                <ul>
+                    <li><a href="main.html">Pizza</a></li>
+                    <li><a href="main.html">Chicken</a></li>
+                    <li><a href="main.html">Pasta</a></li>
+                    <li><a href="main.html">Sandwiches</a></li>
+                    <li><a href="main.html">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li><a href="login.html">Sign In/Register</a></li>
+                    <li><a href="order_history.html">Order History</a></li>
+                    <li><a href="account.html">Saved Addresses</a></li>
+                    <li><a href="account.html">Payment Methods</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ABOUT Forno Express</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="franchise.html">Franchise Info</a></li>
+                    <li><a href="main.html">Nutrition Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="main.html">Customer Service</a></li>
+                    <li><a href="main.html">Store Feedback</a></li>
+                    <li><a href="main.html">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Forno Express Pizza LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Simple password validation
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            // In a real application, this would send the registration data to a server
+            alert('Account created successfully! You can now sign in.');
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+        
+        // Simple password strength indicator
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const requirements = document.querySelector('.password-requirements');
+            
+            if (password.length >= 8 && /[0-9]/.test(password) && /[a-zA-Z]/.test(password)) {
+                requirements.style.color = 'green';
+            } else {
+                requirements.style.color = '#666';
+            }
+        });
+    </script>
+</body>
+</html>

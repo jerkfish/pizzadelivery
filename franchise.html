@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Opportunities - FornoExpress Pizza</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #0054a6;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #e31837;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        
+        .cart-count {
+            background-color: #e31837;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        /* Hero Section */
+        .franchise-hero {
+            background: linear-gradient(rgba(0,84,166,0.8), rgba(0,84,166,0.9)), url('https://via.placeholder.com/1200x600?text=FornoExpress+Franchise');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .hero-cta {
+            background-color: #e31837;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .hero-cta:hover {
+            background-color: #c41430;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #0054a6;
+            margin: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #e31837;
+            margin: 15px auto;
+        }
+        
+        /* Why Franchise Section */
+        .why-franchise {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .benefit-card {
+            padding: 25px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #0054a6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .benefit-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Requirements Section */
+        .requirements-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .requirements-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .requirements-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .financial-requirements, .personal-requirements {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .requirements-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .requirements-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .requirement-icon {
+            color: #e31837;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .requirement-text strong {
+            color: #0054a6;
+        }
+        
+        /* Process Section */
+        .process-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #0054a6;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .process-step {
+                margin-bottom: 30px;
+                width: 100%;
+            }
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: #0054a6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 0 0 3px #0054a6;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 10px;
+        }
+        
+        .step-description {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Investment Section */
+        .investment-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .investment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .investment-table th {
+            background-color: #0054a6;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .investment-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .investment-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .investment-table tr:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .cost-amount {
+            font-weight: bold;
+            color: #e31837;
+        }
+        
+        .investment-note {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #ffc107;
+            margin-top: 20px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #0054a6;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            font-size: 20px;
+            color: #e31837;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 60px;
+            color: #e31837;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0054a6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: #0054a6;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0054a6, #003366);
+            color: white;
+            border-radius: 8px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background-color: #e31837;
+            color: white;
+        }
+        
+        .cta-primary:hover {
+            background-color: #c41430;
+        }
+        
+        .cta-secondary {
+            background-color: white;
+            color: #0054a6;
+        }
+        
+        .cta-secondary:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0054a6;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            .user-actions {
+                margin-top: 15px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .investment-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">FornoExpress <span>PIZZA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="franchise.html" class="active">Franchise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">Cart <span class="cart-count">3</span></a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="franchise-hero">
+        <h1 class="hero-title">OWN A FornoExpress FRANCHISE</h1>
+        <p class="hero-subtitle">Join the world's largest pizza delivery company and build your own successful business</p>
+        <button class="hero-cta">APPLY NOW</button>
+    </section>
+    
+    <div class="container">
+        <!-- Why Franchise Section -->
+        <section class="why-franchise">
+            <h2 class="section-title">WHY CHOOSE FornoExpress?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <div class="benefit-title">Proven Business Model</div>
+                    <div class="benefit-description">With over 60 years of experience, FornoExpress has refined a business model that delivers consistent results for franchise owners worldwide.</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌎</div>
+                    <div class="benefit-title">Global Recognition</div>
+                    <div class="benefit-description">Leverage one of the world's most recognized pizza brands with a loyal customer base and strong market presence.</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-title">Ongoing Support</div>
+                    <div class="benefit-description">Receive comprehensive training and continuous support in operations, marketing, and technology to help your business thrive.</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <div class="benefit-title">Cutting-Edge Technology</div>
+                    <div class="benefit-description">Benefit from FornoExpress industry-leading digital platforms, including online ordering, mobile apps, and delivery tracking systems.</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Marketing Power</div>
+                    <div class="benefit-description">Tap into national marketing campaigns and proven local store marketing strategies to drive customer traffic.</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-title">Strong Community</div>
+                    <div class="benefit-description">Join a network of passionate franchisees who share knowledge and best practices to help each other succeed.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Requirements Section -->
+        <section class="requirements-section">
+            <h2 class="section-title">FRANCHISE REQUIREMENTS</h2>
+            <div class="requirements-content">
+                <div class="financial-requirements">
+                    <h3 style="color: #0054a6; margin-bottom: 20px;">Financial Requirements</h3>
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Liquid Capital:</strong> $75,000 minimum</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Net Worth:</strong> $250,000 minimum</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Total Investment:</strong> $119,950 - $461,700</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Franchise Fee:</strong> $25,000</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Royalty Fee:</strong> 5.5% of gross sales</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text"><strong>Advertising Fee:</strong> 4% of gross sales</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="personal-requirements">
+                    <h3 style="color: #0054a6; margin-bottom: 20px;">Personal Qualifications</h3>
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Strong business acumen and management skills</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Commitment to the FornoExpress brand and values</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Willingness to complete comprehensive training</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Ability to actively manage the business</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Excellent customer service orientation</span>
+                        </li>
+                        <li>
+                            <span class="requirement-icon">•</span>
+                            <span class="requirement-text">Community involvement and leadership potential</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Process Section -->
+        <section class="process-section">
+            <h2 class="section-title">THE FRANCHISE PROCESS</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Initial Inquiry</div>
+                    <div class="step-description">Submit your application and learn about FornoExpress franchise opportunity</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Financial Review</div>
+                    <div class="step-description">Complete financial verification and background checks</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Discovery Day</div>
+                    <div class="step-description">Visit FornoExpress headquarters and meet the leadership team</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Approval & Training</div>
+                    <div class="step-description">Complete franchise agreement and begin comprehensive training</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Store Opening</div>
+                    <div class="step-description">Launch your FornoExpress store with ongoing support</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Investment Section -->
+        <section class="investment-section">
+            <h2 class="section-title">INVESTMENT DETAILS</h2>
+            <table class="investment-table">
+                <thead>
+                    <tr>
+                        <th>Expense Category</th>
+                        <th>Low</th>
+                        <th>High</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Initial Franchise Fee</td>
+                        <td class="cost-amount">$25,000</td>
+                        <td class="cost-amount">$25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Real Estate & Leasehold Improvements</td>
+                        <td class="cost-amount">$15,000</td>
+                        <td class="cost-amount">$150,000</td>
+                    </tr>
+                    <tr>
+                        <td>Equipment & Signage</td>
+                        <td class="cost-amount">$65,000</td>
+                        <td class="cost-amount">$135,000</td>
+                    </tr>
+                    <tr>
+                        <td>Initial Marketing</td>
+                        <td class="cost-amount">$3,000</td>
+                        <td class="cost-amount">$10,000</td>
+                    </tr>
+                    <tr>
+                        <td>Additional Funds (3 months)</td>
+                        <td class="cost-amount">$15,000</td>
+                        <td class="cost-amount">$30,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Estimated Investment</strong></td>
+                        <td class="cost-amount"><strong>$119,950</strong></td>
+                        <td class="cost-amount"><strong>$461,700</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="investment-note">
+                <p><strong>Note:</strong> These figures are estimates and may vary based on location, store size, and other factors. This table does not include real estate purchase costs if you choose to buy rather than lease your location.</p>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much can I expect to earn as a FornoExpress franchisee?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Earnings vary based on location, sales volume, and operational efficiency. According to our 2025 Franchise Disclosure Document, the average annual gross sales for FornoExpress stores in the U.S. was approximately $1.1 million. However, individual results may vary significantly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the franchise approval process take?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The entire process typically takes 3-6 months from initial application to store opening. This includes the application review, financial verification, training, and site selection. The timeline can vary based on your location and readiness.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What training and support does FornoExpress provide?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FornoExpress provides comprehensive training including:</p>
+                        <ul style="margin: 10px 0 10px 20px;">
+                            <li>6-week training program at our World Resource Center</li>
+                            <li>Hands-on store operations training</li>
+                            <li>Ongoing field support from business coaches</li>
+                            <li>24/7 operational support</li>
+                            <li>Marketing and advertising assistance</li>
+                            <li>Technology and systems training</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I own multiple FornoExpress locations?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, many of our franchisees own multiple locations. After successfully operating your first store for at least 12 months and meeting performance standards, you may be eligible to apply for additional locations. We offer development agreements for qualified candidates looking to open multiple stores.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What territories are available for new franchises?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Territory availability changes regularly as markets develop. We're actively seeking franchisees in many growing markets across the United States. During the application process, our real estate team will work with you to identify suitable locations based on market analysis and your preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2 class="section-title">SUCCESS STORIES</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Opening my first FornoExpress store was the best decision I ever made. The training and support system is incredible, and the brand recognition brings customers in from day one. I'm now on my third location!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>Franchise Owner since 2015</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As a former corporate employee, I knew the FornoExpress system worked. When I decided to become a franchisee, the transition was seamless. The business model is proven, and the corporate team genuinely cares about our success."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <h4>Sarah Rodriguez</h4>
+                            <p>Franchise Owner since 2025</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I was nervous about leaving my corporate job, but FornoExpress made the process easy. The training prepared me for everything, and the ongoing support has been invaluable. My store exceeded first-year projections by 25%."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Franchise Owner since 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">READY TO START YOUR JOURNEY?</h2>
+            <p class="cta-subtitle">Take the first step toward owning your own FornoExpress Pizza franchise. Our team is ready to help you begin this exciting opportunity.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn cta-primary">APPLY NOW</a>
+                <a href="#" class="cta-btn cta-secondary">DOWNLOAD FRANCHISE INFO</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR MENU</h3>
+                <ul>
+                    <li><a href="menu.html">Pizza</a></li>
+                    <li><a href="menu.html">Chicken</a></li>
+                    <li><a href="menu.html">Pasta</a></li>
+                    <li><a href="menu.html">Sandwiches</a></li>
+                    <li><a href="menu.html">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li><a href="login.html">Sign In/Register</a></li>
+                    <li><a href="order_history.html">Order History</a></li>
+                    <li><a href="account.html">Account Settings</a></li>
+                    <li><a href="index.html">Payment Methods</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ABOUT FornoExpress</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="franchise.html">Franchise Info</a></li>
+                    <li><a href="nutrition.html">Nutrition Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="contact.html">Customer Service</a></li>
+                    <li><a href="contact.html">Store Feedback</a></li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FornoExpress Pizza LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', function() {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
+            });
+            
+            // Apply Now button functionality
+            const applyButtons = document.querySelectorAll('.hero-cta, .cta-primary');
+            applyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest in FornoExpress\'s franchise opportunities! A representative will contact you shortly.');
+                    // In a real implementation, this would open a form or redirect to an application page
+                });
+            });
+            
+            // Add hover effects to benefit cards
+            const benefitCards = document.querySelectorAll('.benefit-card');
+            benefitCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Forno Express Pizza</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+                <div class="header-container">
+            <div class="logo">Forno Express <span>PIZZA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Menu</a></li>
+                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="store.html">Store Locator</a></li>
+                     
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">Cart (0)</a>
+            </div>        </div>
+    </header>
+    
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="login-title">SIGN IN TO YOUR ACCOUNT</h2>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="login-button">SIGN IN</button>
+            </form>
+            
+            <div class="divider">
+                <span>OR SIGN IN WITH</span>
+            </div>
+            
+            <div class="social-login">
+                <button class="social-button">
+                    <img src="https://via.placeholder.com/20x20?text=G" alt="Google">
+                    Google
+                </button>
+                <button class="social-button">
+                    <img src="https://via.placeholder.com/20x20?text=F" alt="Facebook">
+                    Facebook
+                </button>
+            </div>
+            
+            <div class="login-links">
+                <a href="#">Need help signing in?</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="login-container">
+        <div class="register-box">
+            <h3 class="register-title">NEW TO Forno Express?</h3>
+            <p>Create an account to save your favorite orders, addresses, and payment methods for faster checkout.</p>
+            <button class="register-button" onclick="window.location.href='register.html'">CREATE ACCOUNT</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR MENU</h3>
+                <ul>
+                    <li><a href="main.html">Pizza</a></li>
+                    <li><a href="main.html">Chicken</a></li>
+                    <li><a href="main.html">Pasta</a></li>
+                    <li><a href="main.html">Sandwiches</a></li>
+                    <li><a href="main.html">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li><a href="login.html">Sign In/Register</a></li>
+                    <li><a href="order_history.html">Order History</a></li>
+                    <li><a href="account.html">Saved Addresses</a></li>
+                    <li><a href="account.html">Payment Methods</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ABOUT Forno Express</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="franchise.html">Franchise Info</a></li>
+                    <li><a href="main.html">Nutrition Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="main.html">Customer Service</a></li>
+                    <li><a href="main.html">Store Feedback</a></li>
+                    <li><a href="main.html">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Forno Express Pizza LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, this would send the login data to a server
+            alert('Login functionality would be implemented here!');
+            // For demo purposes, redirect to the main page
+            window.location.href = 'main.html';
+        });
+    </script>
+</body>
+</html>

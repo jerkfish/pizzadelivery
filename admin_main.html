@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FornoExpress Pizza</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #0054a6;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #ffffff;
+        }
+        
+        .admin-badge {
+            background-color: #e31837;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        
+        /* Admin Alert Bar */
+        .admin-alert {
+            background-color: #e31837;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Dashboard Layout */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Admin Sidebar */
+        .admin-sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .sidebar-title {
+            font-size: 18px;
+            color: #0054a6;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e31837;
+        }
+        
+        .admin-menu {
+            list-style: none;
+        }
+        
+        .admin-menu-item {
+            margin-bottom: 10px;
+        }
+        
+        .admin-menu-item a {
+            display: block;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .admin-menu-item a:hover, .admin-menu-item a.active {
+            background-color: #0054a6;
+            color: white;
+        }
+        
+        .menu-icon {
+            margin-right: 10px;
+            width: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        /* Dashboard Content */
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Stats Cards */
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #0054a6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e31837;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .stat-change {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .change-positive {
+            color: #4caf50;
+        }
+        
+        .change-negative {
+            color: #e31837;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #0054a6;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e31837;
+        }
+        
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .action-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .action-btn:hover {
+            background-color: #0054a6;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .action-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        /* Recent Orders */
+        .recent-orders {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .orders-table th {
+            background-color: #0054a6;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .orders-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .orders-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .orders-table tr:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .order-id {
+            font-weight: bold;
+            color: #0054a6;
+        }
+        
+        .order-status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-preparing {
+            background-color: #cce7ff;
+            color: #004085;
+        }
+        
+        .status-ready {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-delivered {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .action-cell {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .table-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #0054a6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #00458a;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        /* Inventory Alerts */
+        .inventory-alerts {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .alert-list {
+            list-style: none;
+        }
+        
+        .alert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .alert-item:last-child {
+            border-bottom: none;
+        }
+        
+        .alert-info h4 {
+            color: #0054a6;
+            margin-bottom: 5px;
+        }
+        
+        .alert-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .alert-level {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .level-low {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .level-critical {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* Staff Management */
+        .staff-management {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .staff-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .staff-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #0054a6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .staff-name {
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 5px;
+        }
+        
+        .staff-role {
+            color: #e31837;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .staff-status {
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .status-online {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-offline {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0054a6;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            .user-actions {
+                margin-top: 15px;
+            }
+            
+            .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .orders-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">FornoExpress <span>PIZZA</span> <span class="admin-badge">ADMIN</span></div>
+            <nav>
+                <ul>
+                    <li><a href="admin_main.html" class="active">Dashboard</a></li>
+                    <li><a href="admin_orders.html">Orders</a></li>
+                    <li><a href="admin_staff.html">Staff</a></li>
+                    <li><a href="admin_settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="index.html">View Store</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Admin Alert Bar -->
+    <div class="admin-alert">
+        Alert Bar - You are logged in as an Admin
+    </div>
+    
+    <div class="container">
+        <div class="dashboard-layout">
+            <!-- Admin Sidebar -->
+            <div class="admin-sidebar">
+                <div class="sidebar-title">ADMIN PANEL</div>
+                <ul class="admin-menu">
+                    <li class="admin-menu-item">
+                        <a href="#" class="active">
+                            <span class="menu-icon">📊</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="admin-menu-item">
+                        <a href="#">
+                            <span class="menu-icon"></span>
+                            Order 
+                        </a>
+                    </li>
+                    <li class="admin-menu-item">
+                        <a href="#">
+                            <span class="menu-icon"></span>
+                            Staff 
+                        </a>
+                    </li>
+                    <li class="admin-menu-item">
+                        <a href="#">
+                            <span class="menu-icon"></span>
+                            Store Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Main Dashboard Content -->
+            <div>
+                <!-- Stats Overview -->
+                <div class="dashboard-content">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value">$2,847</div>
+                        <div class="stat-label">Today's Revenue</div>
+                        <div class="stat-change change-positive">+12% from yesterday</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">Orders Today</div>
+                        <div class="stat-change change-positive">+5% from yesterday</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value">24 min</div>
+                        <div class="stat-label">Avg. Delivery Time</div>
+                        <div class="stat-change change-negative">+3 min from average</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-value">4.7</div>
+                        <div class="stat-label">Customer Rating</div>
+                        <div class="stat-change change-positive">+0.2 from last week</div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2 class="section-title">QUICK ACTIONS</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn">
+                            <div class="action-icon">📦</div>
+                            <div>New Order</div>
+                        </button>
+                        <button class="action-btn">
+                            <div class="action-icon">👥</div>
+                            <div>Manage Staff</div>
+                        </button>
+                        <button class="action-btn">
+                            <div class="action-icon">🍕</div>
+                            <div>Menu Items</div>
+                        </button>
+                        <button class="action-btn">
+                            <div class="action-icon">🔔</div>
+                            <div>Notifications</div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders -->
+                <div class="recent-orders">
+                    <h2 class="section-title">RECENT ORDERS</h2>
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="order-id">#DOM-8472</td>
+                                <td>John Smith</td>
+                                <td>2 Pizzas, Breadsticks</td>
+                                <td>$32.50</td>
+                                <td><span class="order-status status-pending">Pending</span></td>
+                                <td class="action-cell">
+                                    <button class="table-btn btn-primary">View</button>
+                                    <button class="table-btn btn-success">Accept</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="order-id">#DOM-8471</td>
+                                <td>Sarah Johnson</td>
+                                <td>1 Pizza, Wings</td>
+                                <td>$28.75</td>
+                                <td><span class="order-status status-preparing">Preparing</span></td>
+                                <td class="action-cell">
+                                    <button class="table-btn btn-primary">View</button>
+                                    <button class="table-btn btn-success">Ready</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="order-id">#DOM-8470</td>
+                                <td>Michael Brown</td>
+                                <td>3 Pizzas, Soda</td>
+                                <td>$45.20</td>
+                                <td><span class="order-status status-ready">Ready</span></td>
+                                <td class="action-cell">
+                                    <button class="table-btn btn-primary">View</button>
+                                    <button class="table-btn btn-success">Deliver</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="order-id">#DOM-8469</td>
+                                <td>Emily Davis</td>
+                                <td>1 Pizza, Pasta</td>
+                                <td>$24.99</td>
+                                <td><span class="order-status status-delivered">Delivered</span></td>
+                                <td class="action-cell">
+                                    <button class="table-btn btn-primary">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Staff Management -->
+                <div class="staff-management">
+                    <h2 class="section-title">ON-DUTY STAFF</h2>
+                    <div class="staff-grid">
+                        <div class="staff-card">
+                            <div class="staff-avatar">MJ</div>
+                            <div class="staff-name">Mike Johnson</div>
+                            <div class="staff-role">Store Manager</div>
+                            <div class="staff-status status-online">ONLINE</div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-avatar">SR</div>
+                            <div class="staff-name">Sarah Rodriguez</div>
+                            <div class="staff-role">Shift Lead</div>
+                            <div class="staff-status status-online">ONLINE</div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-avatar">TW</div>
+                            <div class="staff-name">Tom Wilson</div>
+                            <div class="staff-role">Delivery Driver</div>
+                            <div class="staff-status status-offline">ON DELIVERY</div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-avatar">AD</div>
+                            <div class="staff-name">Add Staff</div>
+                            <div class="staff-role">Click to add</div>
+                            <div class="staff-status status-offline">OFFLINE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>ADMIN TOOLS</h3>
+                <ul>
+                    <li><a href="admin_orders.html">Order Management</a></li>
+                    <li><a href="admin_staff.html">Staff Scheduling</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>STORE INFO</h3>
+                <ul>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                    <li><a href="contact.html">Customer Service</a></li>
+                    <li><a href="nutrition.html">Nutrition Info</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Admin Guide</a></li>
+                    <li><a href="#">Technical Support</a></li>
+                    <li><a href="#">System Status</a></li>
+                    <li><a href="#">Contact IT</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ACCOUNT</h3>
+                <ul>
+                    <li><a href="admin_settings.html">Admin Settings</a></li>
+                    <li><a href="#">User Profile</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FornoExpress Pizza LLC. Admin System v4.2
+        </div>
+    </footer>
+
+    <script>
+        // Admin Dashboard Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update real-time stats (simulated)
+            function updateStats() {
+                // In a real application, this would fetch data from an API
+                const revenueElement = document.querySelector('.stat-card:nth-child(1) .stat-value');
+                const ordersElement = document.querySelector('.stat-card:nth-child(2) .stat-value');
+                
+                // Simulate small changes
+                const currentRevenue = parseInt(revenueElement.textContent.replace('$', '').replace(',', ''));
+                const currentOrders = parseInt(ordersElement.textContent);
+                
+                // Add random variation for demo purposes
+                const newRevenue = currentRevenue + Math.floor(Math.random() * 50);
+                const newOrders = currentOrders + Math.floor(Math.random() * 3);
+                
+                revenueElement.textContent = '$' + newRevenue.toLocaleString();
+                ordersElement.textContent = newOrders;
+            }
+            
+            // Update stats every 30 seconds
+            setInterval(updateStats, 30000);
+            
+            // Order status updates
+            const statusButtons = document.querySelectorAll('.table-btn.btn-success');
+            statusButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    const statusCell = row.querySelector('.order-status');
+                    const currentStatus = statusCell.textContent.trim();
+                    
+                    if (currentStatus === 'Pending') {
+                        statusCell.textContent = 'Preparing';
+                        statusCell.className = 'order-status status-preparing';
+                        this.textContent = 'Ready';
+                    } else if (currentStatus === 'Preparing') {
+                        statusCell.textContent = 'Ready';
+                        statusCell.className = 'order-status status-ready';
+                        this.textContent = 'Deliver';
+                    } else if (currentStatus === 'Ready') {
+                        statusCell.textContent = 'Delivered';
+                        statusCell.className = 'order-status status-delivered';
+                        this.textContent = 'Completed';
+                        this.disabled = true;
+                    }
+                    
+                    // Show confirmation
+                    alert(`Order ${row.querySelector('.order-id').textContent} status updated to ${statusCell.textContent}`);
+                });
+            });
+            
+            // Quick action buttons
+            const actionButtons = document.querySelectorAll('.action-btn');
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.textContent.trim();
+                    alert(`Opening ${action} panel...`);
+                    // In a real application, this would navigate to the appropriate section
+                });
+            });
+            
+            // Admin menu navigation
+            const menuItems = document.querySelectorAll('.admin-menu-item a');
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Show appropriate content (simulated)
+                    const section = this.textContent.trim();
+                    alert(`Loading ${section}...`);
+                });
+            });
+            
+            // Initialize with some random data for demo
+            updateStats();
+        });
+    </script>
+</body>
+</html>

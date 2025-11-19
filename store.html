@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator - Forno Express Pizza</title>
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <header>
+                <div class="header-container">
+            <div class="logo">Forno Express <span>PIZZA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Menu</a></li>
+                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="store.html">Store Locator</a></li>
+                     
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">Cart (0)</a>
+            </div>        </div>
+    </header>
+    
+    <div class="container">
+        <h1 class="page-title">FIND A Forno Express NEAR YOU</h1>
+        <p class="page-subtitle">Enter your address or zip code to find the closest Forno Express location for delivery or carryout</p>
+        
+        <div class="store-locator-container">
+            <!-- Search Section -->
+            <div class="search-section">
+                <h2 class="section-title">FIND A STORE</h2>
+                
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="address">Enter Your Address or Zip Code</label>
+                        <input type="text" id="address" class="form-control" placeholder="e.g. 123 Main St or 12345" value="12345">
+                    </div>
+                    
+                    <button class="search-btn" id="searchStores">FIND STORES</button>
+                </div>
+                
+                <div class="quick-options">
+                    <div class="option-title">Quick Search</div>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-zip="12345">Current Location</button>
+                        <button class="option-btn" data-zip="90210">Beverly Hills</button>
+                        <button class="option-btn" data-zip="10001">New York</button>
+                        <button class="option-btn" data-zip="60601">Chicago</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Store Details -->
+            <div class="store-details">
+                <div class="store-header">
+                    <div>
+                        <h2 class="store-name">Forno Express Pizza - Downtown</h2>
+                        <p class="info-text">0.8 miles away • 10-15 min delivery</p>
+                    </div>
+                    <div class="store-status">OPEN</div>
+                </div>
+                
+                <div class="store-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <strong>Address:</strong><br>
+                            123 Main Street<br>
+                            Anytown, USA 12345
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <strong>Phone:</strong> (555) 123-4567
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <strong>Store Hours:</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="store-hours">
+                    <h3 class="hours-title">STORE HOURS</h3>
+                    <table class="hours-table">
+                        <tr>
+                            <td>Monday - Thursday:</td>
+                            <td>10:00 AM - 12:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday - Saturday:</td>
+                            <td>10:00 AM - 2:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday:</td>
+                            <td>11:00 AM - 11:00 PM</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="store-actions">
+                    <button class="action-btn order-btn">ORDER FROM THIS STORE</button>
+                    <button class="action-btn directions-btn">GET DIRECTIONS</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="map-section">
+            <h2 class="section-title">STORE LOCATION</h2>
+            <div class="map-container">
+                INTERACTIVE MAP WOULD APPEAR HERE<br>
+                Showing: Forno Express Pizza - Downtown
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div class="services-section">
+            <h2 class="section-title">STORE SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🚗</div>
+                    <div class="service-title">Delivery</div>
+                    <div class="service-description">Fast delivery to your door</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🏃</div>
+                    <div class="service-title">Carryout</div>
+                    <div class="service-description">Pick up your order in store</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <div class="service-title">Catering</div>
+                    <div class="service-description">Perfect for parties and events</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🎁</div>
+                    <div class="service-title">Gift Cards</div>
+                    <div class="service-description">The perfect gift for pizza lovers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR MENU</h3>
+                <ul>
+                    <li><a href="product.html">Pizza</a></li>
+                    <li><a href="product.html">Chicken</a></li>
+                    <li><a href="product.html">Pasta</a></li>
+                    <li><a href="product.html">Sandwiches</a></li>
+                    <li><a href="product.html">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li><a href="login.html">Sign In/Register</a></li>
+                    <li><a href="order_history.html">Order History</a></li>
+                    <li><a href="account.html">Saved Addresses</a></li>
+                    <li><a href="account.html">Payment Methods</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ABOUT Forno Express</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="index.html">Franchise Info</a></li>
+                    <li><a href="index.html">Nutrition Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="contact.html">Customer Service</a></li>
+                    <li><a href="contact.html">Store Feedback</a></li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Forno Express Pizza LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchStores').addEventListener('click', function() {
+            const address = document.getElementById('address').value;
+            if (address.trim() === '') {
+                alert('Please enter an address or zip code');
+                return;
+            }
+            
+            // In a real application, this would search for stores near the address
+            alert(`Searching for stores near: ${address}`);
+            
+            // For this demo, we'll just show a success message
+            document.querySelector('.store-name').textContent = 'FornoExpress\'s Pizza - Downtown';
+            document.querySelector('.info-text').innerHTML = '0.8 miles away • 10-15 min delivery';
+        });
+        
+        // Quick option buttons
+        document.querySelectorAll('.option-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const zip = this.getAttribute('data-zip');
+                document.getElementById('address').value = zip;
+                
+                // In a real application, this would trigger a search
+                alert(`Searching for stores in area: ${zip}`);
+                
+                // For this demo, we'll just update the store info
+                let storeName = 'FornoExpress\'s Pizza - Downtown';
+                let distance = '0.8 miles away • 10-15 min delivery';
+                
+                if (zip === '90210') {
+                    storeName = 'FornoExpress\'s Pizza - Beverly Hills';
+                    distance = '1.2 miles away • 15-20 min delivery';
+                } else if (zip === '10001') {
+                    storeName = 'FornoExpress\'s Pizza - Manhattan';
+                    distance = '0.5 miles away • 5-10 min delivery';
+                } else if (zip === '60601') {
+                    storeName = 'FornoExpress\'s Pizza - Chicago Loop';
+                    distance = '1.5 miles away • 20-25 min delivery';
+                }
+                
+                document.querySelector('.store-name').textContent = storeName;
+                document.querySelector('.info-text').innerHTML = distance;
+            });
+        });
+        
+        // Order from this store button
+        document.querySelector('.order-btn').addEventListener('click', function() {
+            const storeName = document.querySelector('.store-name').textContent;
+            alert(`Redirecting to order page for: ${storeName}`);
+            // In a real application, this would redirect to the ordering page for this specific store
+        });
+        
+        // Get directions button
+        document.querySelector('.directions-btn').addEventListener('click', function() {
+            const storeName = document.querySelector('.store-name').textContent;
+            alert(`Opening directions to: ${storeName}`);
+            // In a real application, this would open Google Maps or Apple Maps with the store location
+        });
+    </script>
+</body>
+</html>

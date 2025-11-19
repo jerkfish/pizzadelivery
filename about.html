@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FornoExpress Pizza</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #0054a6;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #e31837;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        
+        .cart-count {
+            background-color: #e31837;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(0,84,166,0.8), rgba(0,84,166,0.9)), url('https://via.placeholder.com/1200x600?text=FornoExpress+Team');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #0054a6;
+            margin: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #e31837;
+            margin: 15px auto;
+        }
+        
+        /* Story Section */
+        .story-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .story-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .story-text p {
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #0054a6;
+            margin-left: -2px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline:before {
+                left: 30px;
+            }
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 50px;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left !important;
+                left: 0 !important;
+            }
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #e31837;
+            border: 4px solid #0054a6;
+            border-radius: 50%;
+            top: 25px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -10px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-marker {
+                left: 20px !important;
+                right: auto !important;
+            }
+        }
+        
+        .timeline-year {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content h3 {
+            color: #e31837;
+            margin-bottom: 10px;
+        }
+        
+        /* Values Section */
+        .values-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #0054a6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+        
+        .value-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 15px;
+        }
+        
+        .value-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid #0054a6;
+        }
+        
+        .member-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0054a6;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: #e31837;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #0054a6, #003366);
+            color: white;
+            border-radius: 8px;
+            padding: 60px 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e31837;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 60px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            color: #0054a6;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background-color: #e31837;
+            color: white;
+        }
+        
+        .cta-primary:hover {
+            background-color: #c41430;
+        }
+        
+        .cta-secondary {
+            background-color: #0054a6;
+            color: white;
+        }
+        
+        .cta-secondary:hover {
+            background-color: #00458a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0054a6;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            .user-actions {
+                margin-top: 15px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">FornoExpress <span>PIZZA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Menu</a></li>
+                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">Cart <span class="cart-count">3</span></a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1 class="hero-title">OUR STORY</h1>
+        <p class="hero-subtitle">From a single store in 1960 to the world's leading pizza delivery company</p>
+    </section>
+    
+    <div class="container">
+        <!-- Story Section -->
+        <section class="story-section">
+            <h2 class="section-title">WHO WE ARE</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Founded in 1960, FornoExpress Pizza has grown from a single location in Ypsilanti, Michigan, into the largest pizza company in the world based on global retail sales. With more than 17,000 stores in over 90 markets, FornoExpress is a company of exceptional people on a mission to be the best pizza delivery company in the world.</p>
+                    
+                    <p>Our fundamental business is pizza delivery, carried out by a network of dedicated corporate and franchise stores. We continue to focus on our core strengths of order-taking, pizza-making, and door-to-door delivery, constantly improving each element to provide better customer service.</p>
+                    
+                    <p>At FornoExpress, we don't just make pizza. We make people happy. That's our mission, and it's what drives us to get better at what we do. From our chefs creating new recipes to our technologists building easier ordering systems, we're all about making the pizza experience better from start to finish.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://via.placeholder.com/500x400?text=FornoExpress+Founders" alt="FornoExpress Pizza founders">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <h2 class="section-title">OUR JOURNEY</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1960</div>
+                    <div class="timeline-content">
+                        <h3>The Beginning</h3>
+                        <p>Brothers Tom and James Monaghan purchase "DomiNick's," a small pizza store in Ypsilanti, Michigan. James soon trades his half of the business to Tom for a used Volkswagen Beetle.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1965</div>
+                    <div class="timeline-content">
+                        <h3>FornoExpress Pizza is Born</h3>
+                        <p>Tom Monaghan renames the business "FornoExpress Pizza, Inc." The three dots in the logo represent the first three FornoExpress stores.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1978</div>
+                    <div class="timeline-content">
+                        <h3>200th Store Opens</h3>
+                        <p>FornoExpress opens its 200th store, showing rapid expansion across the United States.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1983</div>
+                    <div class="timeline-content">
+                        <h3>International Expansion</h3>
+                        <p>FornoExpress opens its first international store in Winnipeg, Canada, beginning global expansion.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1989</div>
+                    <div class="timeline-content">
+                        <h3>5,000th Store</h3>
+                        <p>FornoExpress opens its 5,000th store, becoming one of the fastest-growing pizza chains in the world.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">1998</div>
+                    <div class="timeline-content">
+                        <h3>Online Ordering</h3>
+                        <p>FornoExpress launches its first website, allowing customers to order pizza online for the first time.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">
+                        <h3>Pizza Tracker</h3>
+                        <p>FornoExpress introduces the innovative Pizza Tracker, allowing customers to follow their order from preparation to delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>Recipe Reinvention</h3>
+                        <p>FornoExpress launches a completely new pizza recipe with improved crust, sauce, and cheese, responding to customer feedback.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>17,000+ Stores</h3>
+                        <p>FornoExpress reaches over 17,000 stores worldwide, solidifying its position as the global leader in pizza delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="values-section">
+            <h2 class="section-title">OUR VALUES</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <div class="value-title">Innovation</div>
+                    <div class="value-description">We constantly push boundaries in pizza technology, from our ordering platforms to our delivery methods, always seeking to improve the customer experience.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌟</div>
+                    <div class="value-title">Quality</div>
+                    <div class="value-description">We're committed to using high-quality ingredients and maintaining consistent standards across all our stores worldwide.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⏱️</div>
+                    <div class="value-title">Efficiency</div>
+                    <div class="value-description">Our operational systems are designed for speed and accuracy, ensuring hot, fresh pizza reaches our customers quickly.</div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Community</div>
+                    <div class="value-description">We believe in giving back to the communities we serve through local partnerships, fundraising, and community engagement.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2 class="section-title">LEADERSHIP TEAM</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150x150?text=CEO" alt="Richard Allison" class="member-photo">
+                    <div class="member-name">Richard Allison</div>
+                    <div class="member-role">Chief Executive Officer</div>
+                    <div class="member-bio">Richard has been with FornoExpress since 2011 and became CEO in 2025. He oversees global operations and strategic direction.</div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150x150?text=CFO" alt="Stu Levy" class="member-photo">
+                    <div class="member-name">Stu Levy</div>
+                    <div class="member-role">Chief Financial Officer</div>
+                    <div class="member-bio">Stu manages FornoExpress financial operations and has been instrumental in the company's continued growth and profitability.</div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150x150?text=CTO" alt="Kelly Garcia" class="member-photo">
+                    <div class="member-name">Kelly Garcia</div>
+                    <div class="member-role">Chief Technology Officer</div>
+                    <div class="member-bio">Kelly leads FornoExpress technology initiatives, including the award-winning mobile app and digital ordering platforms.</div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150x150?text=CMO" alt="Art D'Elia" class="member-photo">
+                    <div class="member-name">Art D'Elia</div>
+                    <div class="member-role">Chief Marketing Officer</div>
+                    <div class="member-bio">Art oversees FornoExpress marketing strategy and brand development, including the famous "Oh yes we did" campaign.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2 class="section-title" style="color: white;">BY THE NUMBERS</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">17,000+</div>
+                    <div class="stat-label">Stores Worldwide</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">90+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Pizzas Made Daily</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR MENU</h3>
+                <ul>
+                    <li><a href="product.html">Pizza</a></li>
+                    <li><a href="product.html">Chicken</a></li>
+                    <li><a href="product.html">Pasta</a></li>
+                    <li><a href="product.html">Sandwiches</a></li>
+                    <li><a href="product.html">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li><a href="login.html">Sign In/Register</a></li>
+                    <li><a href="order_history.html">Order History</a></li>
+                    <li><a href="account.html">Account Settings</a></li>
+                    <li><a href="index.html">Payment Methods</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>ABOUT FornoExpress</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="franchise.html">Franchise Info</a></li>
+                    <li><a href="nutrition.html">Nutrition Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="contact.html">Customer Service</a></li>
+                    <li><a href="contact.html">Store Feedback</a></li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FornoExpress Pizza LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for stats counter (for demo purposes)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats when they come into view
+            const statsSection = document.querySelector('.stats-section');
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            // Simple intersection observer for demo
+            // In a real implementation, you would use Intersection Observer API
+            setTimeout(() => {
+                statNumbers.forEach(stat => {
+                    const finalValue = stat.textContent;
+                    stat.textContent = '0';
+                    
+                    let current = 0;
+                    const increment = parseInt(finalValue.replace(/[^0-9]/g, '')) / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= parseInt(finalValue.replace(/[^0-9]/g, ''))) {
+                            stat.textContent = finalValue;
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.floor(current) + (finalValue.includes('+') ? '+' : '');
+                        }
+                    }, 50);
+                });
+            }, 1000);
+            
+            // Add hover effects to team members
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
